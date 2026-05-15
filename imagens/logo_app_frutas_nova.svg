@@ -1,0 +1,61 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGlow" x1="188" y1="144" x2="842" y2="886" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F8F1"/>
+      <stop offset="1" stop-color="#E9F4E7"/>
+    </linearGradient>
+    <linearGradient id="leafFill" x1="210" y1="206" x2="820" y2="824" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17663E"/>
+      <stop offset="1" stop-color="#0F8F47"/>
+    </linearGradient>
+    <linearGradient id="fruitFill" x1="350" y1="264" x2="702" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFAA54"/>
+      <stop offset="1" stop-color="#FF8A1E"/>
+    </linearGradient>
+    <filter id="softShadow" x="76" y="92" width="872" height="860" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="20"/>
+      <feGaussianBlur stdDeviation="28"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0862745 0 0 0 0 0.188235 0 0 0 0 0.121569 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="240" fill="#F4F1E8"/>
+  <circle cx="512" cy="512" r="382" fill="url(#bgGlow)"/>
+
+  <g filter="url(#softShadow)">
+    <path d="M243 545C243 366.063 388.063 221 567 221C669.945 221 761.641 269.745 820.999 345.48C747.404 303.653 664.258 281.744 575.999 281.744C298.5 281.744 163.5 654 410.5 827C312.413 774.837 243 668.345 243 545Z" fill="url(#leafFill)"/>
+    <path d="M295 590C295 424.315 429.315 290 595 290C674.15 290 746.145 320.605 799.958 370.624C763.513 327.211 705.19 299.631 640.5 299.631C530.5 299.631 407.074 393.988 395 532.5C383.677 662.392 476.344 735.254 552 760.5C407.926 739.154 295 677.918 295 590Z" fill="#0B6D36"/>
+
+    <circle cx="590" cy="514" r="188" fill="#FFFDF8"/>
+    <circle cx="590" cy="514" r="166" fill="url(#fruitFill)"/>
+    <circle cx="590" cy="514" r="128" fill="#FFFDF8"/>
+
+    <path d="M590 364C610.487 364 627.838 380.469 631.678 400.593L639.653 442.401L675.248 416.62C692.62 404.037 716.968 407.296 730.451 424.212C743.59 440.695 741.935 464.463 726.648 478.958L694.581 509.366L736.363 519.612C756.489 524.549 770.5 542.596 770.5 563.32C770.5 583.928 756.645 601.894 736.68 606.96L694.56 617.647L726.485 648.262C741.62 662.787 743.084 686.571 729.813 702.95C716.235 719.707 691.87 722.813 674.611 710.123L639.389 684.238L631.195 725.964C627.238 746.106 609.84 762.5 589.5 762.5C569.043 762.5 551.645 746.031 547.805 725.907L539.83 684.099L504.235 709.88C486.863 722.463 462.515 719.204 449.032 702.288C435.893 685.805 437.548 662.037 452.835 647.542L484.902 617.134L443.12 606.888C422.994 601.951 408.983 583.904 408.983 563.18C408.983 542.572 422.838 524.606 442.803 519.54L484.923 508.853L452.998 478.238C437.863 463.713 436.399 439.929 449.67 423.55C463.248 406.793 487.613 403.687 504.872 416.377L540.094 442.262L548.288 400.536C552.245 380.394 569.16 364 590 364Z" fill="#FF8A1E"/>
+
+    <g fill="#FFFDF8">
+      <path d="M602.586 250.39C617.808 249.516 632.66 255.348 643.359 266.365C615.873 283.072 585.585 292.037 553.416 292.37C558.074 270.905 578.89 251.757 602.586 250.39Z"/>
+      <path d="M662.108 270.968C669.172 279.493 673.278 290.351 673.278 301.691H543.19C543.19 301.691 556.149 301.673 579.244 296.2C605.112 290.07 632.616 281.183 662.108 270.968Z"/>
+      <path d="M530.31 294.581C537.087 294.581 542.581 300.075 542.581 306.852C542.581 313.629 537.087 319.123 530.31 319.123C523.533 319.123 518.039 313.629 518.039 306.852C518.039 300.075 523.533 294.581 530.31 294.581Z"/>
+    </g>
+
+    <g fill="#FFFDF8">
+      <path d="M383.5 712C383.5 676.93 411.93 648.5 447 648.5H640C675.07 648.5 703.5 676.93 703.5 712V742C703.5 783.145 670.145 816.5 629 816.5H458C416.855 816.5 383.5 783.145 383.5 742V712Z"/>
+      <path d="M417.5 723.5C417.5 715.768 423.768 709.5 431.5 709.5H654.5C662.232 709.5 668.5 715.768 668.5 723.5V740.5C668.5 763.696 649.696 782.5 626.5 782.5H459.5C436.304 782.5 417.5 763.696 417.5 740.5V723.5Z" fill="#0E4F2F"/>
+      <rect x="446" y="724" width="30" height="73" rx="15" fill="#FFFDF8"/>
+      <rect x="510" y="724" width="30" height="73" rx="15" fill="#FFFDF8"/>
+      <rect x="574" y="724" width="30" height="73" rx="15" fill="#FFFDF8"/>
+      <rect x="638" y="724" width="30" height="73" rx="15" fill="#FFFDF8"/>
+      <path d="M430 665.5H493.5L512 628.5H542L559.5 665.5H652.5L664 640H693L678 685.5H430V665.5Z" fill="#FFFDF8"/>
+    </g>
+
+    <g>
+      <rect x="157" y="786" width="710" height="112" rx="56" fill="#0E4F2F"/>
+      <text x="512" y="833" text-anchor="middle" fill="#FFFDF8" font-family="Segoe UI, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="5">APP FRUTAS</text>
+      <text x="512" y="872" text-anchor="middle" fill="#DDEFE1" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="2">GESTÃO E FRENTE DE CAIXA</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,3 @@
+﻿acao;nome;preco;estoque;unidade;sku;cod_barras
+novo;EXEMPLO PRODUTO;4.95;20;un;;
+atualizar;EXEMPLO PRODUTO;5.45;25;un;;
