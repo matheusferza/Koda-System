@@ -7,7 +7,11 @@ import base64
 from PIL import Image, ImageTk, ImageDraw
 from branding import (
     APP_NAME,
+    APP_VERSION,
     APP_SUBTITLE,
+    APP_DESCRIPTION,
+    APP_ABOUT_HEADING,
+    APP_ABOUT_HIGHLIGHTS,
     COPYRIGHT_LABEL,
     POWERED_BY_LABEL,
     REPORT_FOOTER,
@@ -558,6 +562,23 @@ class FrutariaApp(tk.Tk):
             fg=nav_muted,
         ).pack(anchor="w", pady=(0, 12))
 
+        about_button = tk.Button(
+            status_frame,
+            text="Sobre o sistema",
+            command=self.show_about_dialog,
+            font=("Segoe UI Semibold", 9 if compact_nav else 10),
+            bg=self.theme.get("primary_soft", nav_soft),
+            fg=self.text_color,
+            activebackground=self.theme.get("primary_soft", nav_soft),
+            activeforeground=self.text_color,
+            relief="flat",
+            cursor="hand2",
+            bd=0,
+            padx=12 if compact_nav else 16,
+            pady=8 if compact_nav else 10,
+        )
+        about_button.pack(fill="x", pady=(0, 8))
+
         tk.Button(
             status_frame,
             text="Sair do sistema",
@@ -573,6 +594,115 @@ class FrutariaApp(tk.Tk):
             padx=12 if compact_nav else 16,
             pady=8 if compact_nav else 10,
         ).pack(fill="x")
+
+    def show_about_dialog(self):
+        about_window = tk.Toplevel(self)
+        theme, card, body = build_dialog_shell(
+            about_window,
+            self,
+            title=f"Sobre o {APP_NAME}",
+            subtitle=APP_ABOUT_HEADING,
+            size=(760, 500),
+            controller=self,
+        )
+        body.columnconfigure(0, weight=1)
+
+        hero = tk.Frame(body, bg=theme["surface"])
+        hero.grid(row=0, column=0, sticky="ew", pady=(0, 18))
+        hero.columnconfigure(1, weight=1)
+
+        try:
+            logo_image = Image.open(get_app_logo_path()).resize((74, 74), Image.LANCZOS)
+            self.about_logo_tk = ImageTk.PhotoImage(logo_image)
+            tk.Label(hero, image=self.about_logo_tk, bg=theme["surface"]).grid(
+                row=0,
+                column=0,
+                rowspan=2,
+                sticky="nw",
+                padx=(0, 16),
+            )
+        except Exception:
+            self.about_logo_tk = None
+
+        tk.Label(
+            hero,
+            text=APP_NAME,
+            font=("Segoe UI Black", 24),
+            bg=theme["surface"],
+            fg=theme["text"],
+        ).grid(row=0, column=1, sticky="w")
+        tk.Label(
+            hero,
+            text=f"Versao {APP_VERSION} | {APP_SUBTITLE}",
+            font=("Segoe UI Semibold", 10),
+            bg=theme["surface"],
+            fg=theme["primary"],
+        ).grid(row=1, column=1, sticky="w", pady=(4, 0))
+
+        description_card = tk.Frame(
+            body,
+            bg=theme["surface_alt"],
+            padx=16,
+            pady=16,
+            highlightthickness=1,
+            highlightbackground=theme["border"],
+        )
+        description_card.grid(row=1, column=0, sticky="ew", pady=(0, 16))
+        tk.Label(
+            description_card,
+            text=APP_DESCRIPTION,
+            font=("Segoe UI", 10),
+            bg=theme["surface_alt"],
+            fg=theme["text"],
+            wraplength=640,
+            justify="left",
+        ).pack(anchor="w")
+
+        highlights_card = tk.Frame(
+            body,
+            bg=theme["surface"],
+            highlightthickness=1,
+            highlightbackground=theme["border"],
+            padx=16,
+            pady=16,
+        )
+        highlights_card.grid(row=2, column=0, sticky="nsew")
+        body.rowconfigure(2, weight=1)
+
+        tk.Label(
+            highlights_card,
+            text="Recursos principais",
+            font=("Segoe UI Semibold", 13),
+            bg=theme["surface"],
+            fg=theme["text"],
+        ).pack(anchor="w")
+
+        for item in APP_ABOUT_HIGHLIGHTS:
+            tk.Label(
+                highlights_card,
+                text=f"- {item}",
+                font=("Segoe UI", 10),
+                bg=theme["surface"],
+                fg=theme["text_muted"],
+                wraplength=640,
+                justify="left",
+            ).pack(anchor="w", pady=(10, 0))
+
+        footer = tk.Frame(body, bg=theme["surface"])
+        footer.grid(row=3, column=0, sticky="ew", pady=(18, 0))
+        footer.columnconfigure(0, weight=1)
+
+        tk.Label(
+            footer,
+            text=f"{POWERED_BY_LABEL} | {COPYRIGHT_LABEL}",
+            font=("Segoe UI", 9),
+            bg=theme["surface"],
+            fg=theme["text_muted"],
+        ).grid(row=0, column=0, sticky="w")
+
+        close_button = tk.Button(footer, text="Fechar", command=about_window.destroy)
+        style_button(close_button, "primary", theme)
+        close_button.grid(row=0, column=1, sticky="e")
 
     def show_startup_alerts(self):
         """Sincroniza o estado inicial e direciona o usuário para o shell correto."""

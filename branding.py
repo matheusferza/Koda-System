@@ -9,6 +9,13 @@ APP_DESCRIPTION = (
     "Controle de caixa, estoque e equipe com foco em velocidade, "
     "estabilidade e apresentacao profissional."
 )
+APP_ABOUT_HEADING = "Plataforma de operacao para mercados, mercearias e lojas de bairro."
+APP_ABOUT_HIGHLIGHTS = (
+    "Frente de caixa com foco em agilidade no atendimento.",
+    "Gestao de estoque, produtos, equipe e dados da empresa.",
+    "Relatorios operacionais e historico de vendas para acompanhamento diario.",
+    "Geracao de etiquetas e catalogos com codigo de barras interno EAN-13.",
+)
 COPYRIGHT_HOLDER = "MJBS COMPANY"
 COPYRIGHT_LABEL = f"Copyright (c) {datetime.now().year} {COPYRIGHT_HOLDER}"
 POWERED_BY_LABEL = f"Desenvolvido por {COPYRIGHT_HOLDER}"
